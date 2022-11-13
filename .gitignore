@@ -1,0 +1,4 @@
+/src/*
+!src/hello.js
+!src/myapp
+src/myapp/node_modules/*

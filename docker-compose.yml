@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    image: "node:19-alpine"
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    restart: always
+    volumes:
+      - ./src:/var/www
+    ports:
+      - "3010:3000"
+    working_dir: /var/www
+    command: /bin/sh -c "npm install --prefix /var/www/myapp && npm run --prefix /var/www/myapp devserver"
